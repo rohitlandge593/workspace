@@ -57,7 +57,45 @@ namespace dotnetapp.Controllers
         [HttPost]
         public IActionResult Edit(int deptId,Dept dept)
         {
-            Create deptList=db.Depts.Find(deptId);
+            var deptList=db.Depts.Find(deptId);
+            if(deptList!=null)
+            {
+                deptList.DepartmentId=dept.DepartmentId;
+                deptList.DepartmentName=dept.DepartmentName;
+                db.Update();
+                return RedirectToAction("Index");
+            }
+            else 
+            {
+                return NotFound();
+            }
+        }
+        [HttpGet]
+        public IActionResult Delete(int deptId)
+        {
+            var deptList=db.Depts.Find(deptId);
+            if(deptList!=null)
+            {
+                return View();
+            }
+            else{
+                return NotFound();
+            }
+        }
+        [HttPost]
+        public IActionResult Delete(int deptId,Dept dept)
+        {
+            var deptList=db.Depts.Find(deptId);
+            if(deptList!=null)
+            {
+                db.Depts.Remove(deptList);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else 
+            {
+                return NotFound();
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

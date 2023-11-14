@@ -25,11 +25,7 @@ namespace dotnetapp.Controllers
             db=context;
         }
 
-        public IActionResult abc()
-        {
-            return View()
-            ;
-        }
+        
         public IActionResult Index()
         {
             var employeeList=db.Employees;

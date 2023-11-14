@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace dotnetapp.Data
+namespace dotnetapp.Models
 {
     public partial class Employee
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace dotnetapp.Data
+namespace dotnetapp.Models
 {
     public partial class EmployeeDbContext : DbContext
     {
@@ -16,7 +16,7 @@ namespace dotnetapp.Data
         {
         }
 
-        public virtual DbSet<Dept> Depts { get; set; } = null!;
+        public virtual DbSet<Department> Departments { get; set; } = null!;
         public virtual DbSet<Employee> Employees { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

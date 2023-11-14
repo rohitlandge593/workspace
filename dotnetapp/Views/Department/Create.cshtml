@@ -1,12 +1,12 @@
-@model dotnetapp.Models.Dept
+@model dotnetapp.Models.Department
 <h2>Add Department</h2>
 <br>
 @using(Html.BeginForm())
 {
     <div class="form-horizontal">
         <div class="form-group">
-            @Html.DisplayNameFor(m=>m.DepartmentName)
-            @Html.EditorFor(m=>m.DepartmentName)
+            @Html.DisplayNameFor(m=>m.Name)
+            @Html.EditorFor(m=>m.Name)
         </div>
         <br>
     </div>

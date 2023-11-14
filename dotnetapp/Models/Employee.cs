@@ -6,10 +6,10 @@ namespace dotnetapp.Models
     public partial class Employee
     {
         public int EmployeeId { get; set; }
-        public string? EmployeeName { get; set; }
-        public string? EmployeeLastName { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
         public int? DepartmentId { get; set; }
 
-        public virtual Dept? Department { get; set; }
+        public virtual Department? Department { get; set; }
     }
 }

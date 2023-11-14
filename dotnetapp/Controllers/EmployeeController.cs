@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using dotnetapp.Models;
 using Microsoft.EntityFrameworkCore;
@@ -20,8 +21,8 @@ namespace dotnetapp.Controllers
         //     _logger = logger;
         // }
 
-        public EmployeeDbContext db;
-        public EmployeeController(EmployeeDbContext context)
+        public ApplicationDbContext db;
+        public EmployeeController(ApplicationDbContext context)
         {
             db=context;
         }
@@ -29,13 +30,13 @@ namespace dotnetapp.Controllers
         
         public IActionResult Index()
         {
-            var employeeList=db.Employees.Include("Dept").ToList();
+            var employeeList=db.Employees.Include("Departments").ToList();
             return View(employeeList);
         }
         [HttpGet]
         public IActionResult Create()
         {
-            ViewBag.DeptId=new SelectList(db.Depts,"DepartmentId","DepartmentName");
+            ViewBag.DeptId=new SelectList(db.Departments,"DepartmentId","DepartmentName");
             return View();
         }
         [HttpPost]
@@ -63,8 +64,8 @@ namespace dotnetapp.Controllers
             var employeeList=db.Employees.Find(employeeId);
             if(employeeList!=null)
             {
-                employeeList.EmployeeName=employee.EmployeeName;
-                employeeList.EmployeeLastName=employee.EmployeeLastName;
+                employeeList.FirstName=employee.FirstName;
+                employeeList.LastName=employee.LastName;
                 employeeList.DepartmentId=employee.DepartmentId;
                 db.Update(employee);
                 return RedirectToAction("Index");
@@ -100,6 +101,10 @@ namespace dotnetapp.Controllers
             {
                 return NotFound();
             }
+        }
+        public IActionResult DeleteConfirmed(int employeeId)
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

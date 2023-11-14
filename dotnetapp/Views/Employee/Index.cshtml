@@ -7,9 +7,9 @@
         
         <tr>
             <th>@Html.DisplayNameFor(m=>m.EmployeeId)</th>
-            <th>@Html.DisplayNameFor(m=>m.EmployeeName)</th>
-            <th>@Html.DisplayNameFor(m=>m.EmployeeLastName)</th>
-            <th>@Html.DisplayNameFor(m=>m.DepartmentName)</th>
+            <th>@Html.DisplayNameFor(m=>m.FirstName)</th>
+            <th>@Html.DisplayNameFor(m=>m.LastName)</th>
+            
             <th>Actions</th>
         </tr>
         <hr>
@@ -18,9 +18,9 @@
             {
                 <tr>
                     <td>@item.EmployeeId</td>
-                    <td>@item.EmployeeName</td>
-                    <td>@item.EmployeeLastName</td>
-                    <td>@item.DepartmentName</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    
                     <td><a class="btn btn-secondary" href="/Employee/Edit" />Edit</td>
                     <td><a class="btn btn-danger" href="/Employee/Delete" />Delete</td>
                 </tr>

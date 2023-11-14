@@ -1,4 +1,4 @@
-@model IEnumerable<dotnetapp.Models.Dept>
+@model IEnumerable<dotnetapp.Models.Department>
     <h2>Department Details</h2>
     <br>
     @Html.ActionLink("Add Department","Create","Dept")
@@ -7,7 +7,7 @@
         
         <tr>
             <th>@Html.DisplayNameFor(m=>m.DepartmentId)</th>
-            <th>@Html.DisplayNameFor(m=>m.DepartmentName)</th>
+            <th>@Html.DisplayNameFor(m=>m.Name)</th>
             <th>Actions</th>
         </tr>
         <hr>
@@ -16,7 +16,7 @@
             {
                 <tr>
                     <td>@item.DepartmentId</td>
-                    <td>@item.DepartmentName</td>
+                    <td>@item.Name</td>
                     
                     <td><a class="btn btn-secondary" href="/Employee/Edit" />Edit</td>
                     <td><a class="btn btn-danger" href="/Employee/Delete" />Delete</td>

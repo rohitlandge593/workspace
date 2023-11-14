@@ -1,4 +1,4 @@
-@model dotnetapp.Models.Employee
+@model dotnetapp.Models.Department
 <h2>Delete Employee</h2>
 <br>
 @using(Html.BeginForm())
@@ -10,8 +10,8 @@
         </div>
         <br>
         <div class="form-group">
-            @Html.DisplayNameFor(m=>m.DepartmentName)
-            @Html.DisplayFor(m=>m.DepartmentName)
+            @Html.DisplayNameFor(m=>m.Name)
+            @Html.DisplayFor(m=>m.Name)
         </div>
         <br>
     </div>

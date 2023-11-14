@@ -24,13 +24,19 @@ namespace dotnetapp.Controllers
         {
             db=context;
         }
+
+        public IActionResult abc()
+        {
+            return View()
+            ;
+        }
         public IActionResult Index()
         {
             var employeeList=db.Employees;
             return View(employeeList);
         }
         [HttpGet]
-        public IActioResult Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -54,7 +60,7 @@ namespace dotnetapp.Controllers
             }
         }
         [HttpPost]
-        public IactionResult Edit(int employeeId,Employee employee)
+        public IActionResult Edit(int employeeId,Employee employee)
         {
             var employeeList=db.Employees.Find(employeeId);
             if(employeeList!=null)

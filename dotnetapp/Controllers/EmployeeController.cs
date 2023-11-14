@@ -28,12 +28,13 @@ namespace dotnetapp.Controllers
         
         public IActionResult Index()
         {
-            var employeeList=db.Employees;
+            var employeeList=db.Employees.Include("Dept").ToList();
             return View(employeeList);
         }
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.DeptId=new SelectList(db.Depts,"DepartmentId","DepartmentName");
             return View();
         }
         [HttpPost]

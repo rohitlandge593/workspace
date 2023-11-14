@@ -1,0 +1,20 @@
+@model dotnetapp.Data.Employee
+<h2>Delete Employee</h2>
+<br>
+@using(Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.DisplayNameFor(m=>m.DepartmentId)
+            @Html.DisplayFor(m=>m.DepartmentId)
+        </div>
+        <br>
+        <div class="form-group">
+            @Html.DisplayNameFor(m=>m.DepartmentName)
+            @Html.DisplayFor(m=>m.DepartmentName)
+        </div>
+        <br>
+    </div>
+    <br>
+    <input type="submit" value="Delete" class="btn btn-danger" />
+}

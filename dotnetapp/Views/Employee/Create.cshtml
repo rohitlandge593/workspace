@@ -1,0 +1,28 @@
+@model dotnetapp.Data.Employee
+<h2>Add Employee</h2>
+<br>
+@using(Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.DisplayNameFor(m=>m.EmployeeName)
+            @Html.EditorFor(m=>m.EmployeeName)
+        </div>
+        <br>
+        <div class="form-group">
+            @Html.DisplayNameFor(m=>m.EmployeeLastName)
+            @Html.EditorFor(m=>m.EmployeeLastName)
+        </div>
+        <br>
+        <div class="form-group">
+            @Html.DisplayNameFor(m=>m.DepartmentName)
+            @Html.EditorFor(m=>m.DepartmentName)
+        </div>
+        <br>
+        
+    </div>
+    <br>
+    <br>
+    <input type="submit" value="Create" class="btn btn-primary" />
+    
+}

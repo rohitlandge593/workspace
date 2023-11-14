@@ -1,0 +1,17 @@
+@model dotnetapp.Data.Dept
+<h2>Add Department</h2>
+<br>
+@using(Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.DisplayNameFor(m=>m.DepartmentName)
+            @Html.EditorFor(m=>m.DepartmentName)
+        </div>
+        <br>
+    </div>
+    <br>
+    <br>
+    <input type="submit" value="Create" class="btn btn-primary" />
+    
+}

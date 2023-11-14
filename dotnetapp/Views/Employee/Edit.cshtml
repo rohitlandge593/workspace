@@ -2,3 +2,26 @@
 <h2>Edit Employee</h2>
 <hr>
 <br>
+@using(Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="from-group">
+            @Html.DisplayNameFor(m=>m.EmployeeName)
+            @Html.EditorFor(m=>m.EmployeeName)
+        </div>
+        <br>
+        <div class="from-group">
+            @Html.DisplayNameFor(m=>m.EmployeeLastName)
+            @Html.EditorFor(m=>m.EmployeeLastName)
+        </div>
+        <br>
+        <div class="from-group">
+            @Html.DisplayNameFor(m=>m.DepartmentId)
+            @Html.EditorFor(m=>m.DepartmentId)
+        </div>
+        <br>
+        <br>
+    </div>
+    <br>
+    <input type="submit" value="Edit" class="btn btn-primary" />
+}

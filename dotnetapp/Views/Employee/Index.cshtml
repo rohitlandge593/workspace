@@ -1,0 +1,28 @@
+@model IEnumerable<dotnetapp.Data.Employee>
+    <h2>Employee Details</h2>
+    <br>
+    @Html.ActionLink("Add Employee","Create","Employee")
+    
+    @using(Html.BeginForm())
+    {
+        <tr>
+            <th>@Html.DisplayNameFor(m=>m.EmployeeId)</th>
+            <th>@Html.DisplayNameFor(m=>m.EmployeeName)</th>
+            <th>@Html.DisplayNameFor(m=>m.EmployeeLastName)</th>
+            <th>@Html.DisplayNameFor(m=>m.DepartmentId)</th>
+            <th>@Html.DisplayNameFor(Actions)</th>
+        </tr>
+        <hr>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.EmployeeId</td>
+                    <td>@item.EmployeeName</td>
+                    <td>@item.EmployeeLastName</td>
+                    <td>@item.DepartmentId</td>
+                    <td><a class="btn btn-secondary" href="/Employee/Edit" />Edit</td>
+                </tr>
+            }
+            
+    }

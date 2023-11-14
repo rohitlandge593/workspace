@@ -15,8 +15,8 @@
         </div>
         <br>
         <div class="form-group">
-            @Html.DisplayNameFor(m=>m.DepartmentName)
-            @Html.EditorFor(m=>m.DepartmentName)
+            @Html.DisplayNameFor(m=>m.DepartmentId)
+            @Html.DropDownListFor(m=>m.DepartmentId, (SelectList)ViewBag.DeptId, "Select Department", new { @class = "form-control"})
         </div>
         <br>
         

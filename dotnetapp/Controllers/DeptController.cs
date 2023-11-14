@@ -35,7 +35,7 @@ namespace dotnetapp.Controllers
         {
             return View();
         }
-        [httpPost]
+        [HttpPost]
         public IActionResult Create(Dept dept)
         {
             db.Depts.Add(dept);
@@ -54,7 +54,7 @@ namespace dotnetapp.Controllers
                 return NotFound();
             }
         }
-        [HttPost]
+        [HttpPost]
         public IActionResult Edit(int deptId,Dept dept)
         {
             var deptList=db.Depts.Find(deptId);
@@ -82,7 +82,7 @@ namespace dotnetapp.Controllers
                 return NotFound();
             }
         }
-        [HttPost]
+        [HttpPost]
         public IActionResult Delete(int deptId,Dept dept)
         {
             var deptList=db.Depts.Find(deptId);
